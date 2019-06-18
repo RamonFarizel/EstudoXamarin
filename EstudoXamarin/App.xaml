@@ -4,5 +4,18 @@
              x:Class="EstudoXamarin.App"
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms">
     <Application.Resources>
+        
+        <Color x:Key="CorBotao">White</Color>
+        
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource CorBotao}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        
+        <Style TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        
     </Application.Resources>
 </prism:PrismApplication>

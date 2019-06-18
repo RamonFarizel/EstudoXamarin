@@ -16,6 +16,7 @@ namespace EstudoXamarin
         public MainPage()
         {
             InitializeComponent();
+          
         }
     }
 }

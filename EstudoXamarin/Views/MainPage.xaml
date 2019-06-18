@@ -6,7 +6,7 @@
              ios:Page.UseSafeArea="true"
              x:Class="EstudoXamarin.MainPage"
              BackgroundColor="#add8e6"
-             >
+             Title="Pagina1">
     
     <Grid  >
         <Grid.ColumnDefinitions>
@@ -70,16 +70,15 @@
                             FlexLayout.Basis="50"
                             JustifyContent="SpaceAround">
                     
-                       <Button Text="Entrar"
-                               FlexLayout.AlignSelf="Center"
-                               VerticalOptions="EndAndExpand"
-                               HeightRequest="50"
-                               BackgroundColor="White"/>
+                    <Button Text="Entrar"
+                            FlexLayout.AlignSelf="Center"
+                            VerticalOptions="EndAndExpand"
+                            HeightRequest="50"
+                            Command="{Binding Navegar}"/>
                     
                     <Button Text="Novo Usuário"
                             HeightRequest="50"
                             FlexLayout.AlignSelf="Center"
-                            BackgroundColor="White"
                             Font="Bold"
                             />
                     

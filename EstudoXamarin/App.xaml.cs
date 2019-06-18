@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using EstudoXamarin.Controls;
+using EstudoXamarin.Enums;
+using EstudoXamarin.ViewModels;
+using EstudoXamarin.Views;
 using Prism;
 using Prism.DryIoc;
 using Prism.Ioc;
@@ -10,6 +14,8 @@ namespace EstudoXamarin
 {
     public partial class App : PrismApplication
     {
+        public static TiposDeTransicaoEnum TipoAnimacao = TiposDeTransicaoEnum.Default;
+
         public App(): this(null) { }
 
         public App(IPlatformInitializer iplataformaInitializer) : base(iplataformaInitializer) { }
@@ -27,12 +33,14 @@ namespace EstudoXamarin
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<NavigationPage>("Go");
+            containerRegistry.RegisterForNavigation<TransitionNavigationPage>("Go2");
 
-            containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<DetailPage>();
         }
 
-        private Task InitalizeNavigation() => NavigationService.NavigateAsync("MainPage");
+        private Task InitalizeNavigation() => NavigationService.NavigateAsync("Go2/MainPage");
 
 
         protected override void OnStart()

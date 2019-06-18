@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using EstudoXamarin.Controls;
+using EstudoXamarin.iOS.Renderers;
 using Foundation;
 using Prism;
 using Prism.Ioc;
@@ -29,7 +30,7 @@ namespace EstudoXamarin.iOS
         {
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
-               
+                containerRegistry.RegisterForNavigation<TransitionNavigationPage, TransitionNavigationPageRenderer>();
             }
         }
 
