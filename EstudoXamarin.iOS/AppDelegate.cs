@@ -6,6 +6,7 @@ using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
+using Xamarin.Forms;
 
 namespace EstudoXamarin.iOS
 {
@@ -20,7 +21,7 @@ namespace EstudoXamarin.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new IOSInitializer()));
             //LoadApplication(new App());
-
+            FormsMaterial.Init();
             return base.FinishedLaunching(app, options);
         }
 

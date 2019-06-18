@@ -1,12 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:EstudoXamarin" 
-             x:Class="EstudoXamarin.MainPage">
-    <StackLayout>
-        <Label Text="Primeiro Commit" 
-               HorizontalOptions="Center" 
-               VerticalOptions="CenterAndExpand" 
-        />
-    </StackLayout>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:local="clr-namespace:EstudoXamarin"
+             ios:Page.UseSafeArea="true"
+             x:Class="EstudoXamarin.MainPage"
+             BackgroundColor="#add8e6"
+             >
+    
+    <Grid  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Text="Nome Da Empresa"
+               Grid.Row="0"
+               Grid.Column="0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="30"/>
+     
+        <Frame CornerRadius="20"
+               Margin="20,0"
+               VerticalOptions="Center"
+               HasShadow="false"
+               Grid.Row="1"
+               HeightRequest="{OnPlatform iOS=350,Android=450}"
+               >
+            
+            <FlexLayout Direction="Column">
+            
+                <Label Text="CPF"
+                       FlexLayout.Basis="{OnPlatform iOS=30,Android=30}"/>
+                
+                <Entry Placeholder="Insira o seu CPF"
+                       FlexLayout.Basis="{OnPlatform iOS=50,Android=55}"
+                       Margin="0"
+                       />
+                
+                <Label Text="Senha"
+                       FlexLayout.Basis="30"
+                       VerticalTextAlignment="Center"/>
+                
+                <Entry Placeholder="Insira o sua Ficha"
+                       FlexLayout.Basis="{OnPlatform iOS=50,Android=55}"
+                       Margin="0"
+                       />
+                
+                <FlexLayout FlexLayout.Basis="55"
+                            Direction="RowReverse"
+                            Margin="0,10">
+                  
+                     <Switch />
+                    
+                      <Label Text="Lembrar Usuário"
+                             VerticalTextAlignment="Center"
+                             Margin="0,0,5,0"
+                             FontSize="Micro"/>
+                    
+                </FlexLayout>
+               
+                <FlexLayout Direction="Row"
+                            FlexLayout.Basis="50"
+                            JustifyContent="SpaceAround">
+                    
+                       <Button Text="Entrar"
+                               FlexLayout.AlignSelf="Center"
+                               VerticalOptions="EndAndExpand"
+                               HeightRequest="50"
+                               BackgroundColor="White"/>
+                    
+                    <Button Text="Novo Usuário"
+                            HeightRequest="50"
+                            FlexLayout.AlignSelf="Center"
+                            BackgroundColor="White"
+                            Font="Bold"
+                            />
+                    
+                </FlexLayout>
+                
+             
+            </FlexLayout>
+            
+        </Frame>
+    </Grid>
 </ContentPage>
