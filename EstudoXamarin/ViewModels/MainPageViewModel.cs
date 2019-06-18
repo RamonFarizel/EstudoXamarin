@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using EstudoXamarin.Enums;
+using EstudoXamarin.Extentions;
 using EstudoXamarin.ViewModels.Base;
 using Prism.Commands;
 using Prism.Navigation;
@@ -23,7 +24,7 @@ namespace EstudoXamarin.ViewModels
 
         private async Task ExecuteNavegar()
         {
-             await NavigationService.NavigateAsync("Go2/DetailPage");
+             await NavigationService.NavigateAsync("Go2/DetailPage", TiposDeTransicaoEnum.SlideFromBottom);
         }
     }
 }
