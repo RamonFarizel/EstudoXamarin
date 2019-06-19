@@ -24,7 +24,12 @@ namespace EstudoXamarin.ViewModels
 
         private async Task ExecuteNavegar()
         {
-             await NavigationService.NavigateAsync("Go2/DetailPage", TiposDeTransicaoEnum.SlideFromBottom);
+            var navParameters = new NavigationParameters()
+            {
+                {"Teste", "Testando123"}
+            };
+
+             await NavigationService.NavigateAsync("Go2/DetailPage", TiposDeTransicaoEnum.SlideFromBottom,navParameters);
         }
     }
 }

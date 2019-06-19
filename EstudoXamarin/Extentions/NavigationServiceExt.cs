@@ -8,7 +8,12 @@ namespace EstudoXamarin.Extentions
 {
     public static class NavigationServiceExt
     {
-        public static Task NavigateAsync(this INavigationService navigationService, string name, TiposDeTransicaoEnum transitionType = TiposDeTransicaoEnum.Default, NavigationParameters parameters = null, bool? useModalNavigation = null, bool animated = true)
+        public static Task NavigateAsync(this INavigationService navigationService,
+                                         string name,
+                                         TiposDeTransicaoEnum transitionType = TiposDeTransicaoEnum.Default,
+                                         NavigationParameters parameters = null,
+                                         bool? useModalNavigation = null,
+                                         bool animated = true)
         {
             (App.Current.MainPage as TransitionNavigationPage).TransitionType = transitionType;
             return navigationService.NavigateAsync(name, parameters, useModalNavigation, animated);

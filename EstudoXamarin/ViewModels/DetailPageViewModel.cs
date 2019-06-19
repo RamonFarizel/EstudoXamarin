@@ -12,5 +12,15 @@ namespace EstudoXamarin.ViewModels
         {
         }
 
+        public override void OnNavigatingTo(INavigationParameters parameters)
+        {
+            base.OnNavigatingTo(parameters);
+            //if (parameters.ContainsKey("Teste"))
+               // var resultado = parameters.GetValue<string>("Teste");
+
+            var resultado = parameters["Teste"] as string;
+
+        }
+
     }
 }
