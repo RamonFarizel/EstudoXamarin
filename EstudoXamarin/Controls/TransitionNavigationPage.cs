@@ -21,6 +21,8 @@ namespace EstudoXamarin.Controls
 
         public TransitionNavigationPage(Page root) : base(root)
         {
+           
         }
+        
     }
 }

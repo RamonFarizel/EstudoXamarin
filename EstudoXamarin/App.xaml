@@ -17,5 +17,15 @@
             <Setter Property="TextColor" Value="Black"/>
         </Style>
         
+         <Style TargetType="Entry">
+            <Style.Triggers>
+                 <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="Yellow"/>
+                        <Setter Property="PlaceholderColor" Value="Black"/>
+                 </Trigger>
+            </Style.Triggers>
+           
+        </Style>
+        
     </Application.Resources>
 </prism:PrismApplication>

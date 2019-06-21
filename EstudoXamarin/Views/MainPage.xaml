@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:local="clr-namespace:EstudoXamarin"
+             xmlns:converter="clr-namespace:EstudoXamarin.Converters"
              ios:Page.UseSafeArea="true"
              x:Class="EstudoXamarin.MainPage"
              BackgroundColor="#add8e6"
              Title="Pagina1">
+    
+    <ContentPage.Resources>
+        <converter:StringToBoolValidationConverter x:Key="stringToBoolValidationConverter"/>
+    </ContentPage.Resources>
+        
     
     <Grid  >
         <Grid.ColumnDefinitions>
@@ -42,7 +48,15 @@
                 <Entry Placeholder="Insira o seu CPF"
                        FlexLayout.Basis="{OnPlatform iOS=50,Android=55}"
                        Margin="0"
-                       />
+                       x:Name="nome"
+                       Text="{Binding Nome}">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                            <Setter Property="BackgroundColor" Value="Yellow"/>
+                            <Setter Property="PlaceholderColor" Value="Red"/>
+                        </Trigger>
+                    </Entry.Triggers>
+               </Entry>
                 
                 <Label Text="Senha"
                        FlexLayout.Basis="30"
@@ -51,7 +65,8 @@
                 <Entry Placeholder="Insira o sua Ficha"
                        FlexLayout.Basis="{OnPlatform iOS=50,Android=55}"
                        Margin="0"
-                       />
+                       Text="{Binding Senha}"
+                       x:Name="senha"/>
                 
                 <FlexLayout FlexLayout.Basis="55"
                             Direction="RowReverse"
@@ -70,17 +85,40 @@
                             FlexLayout.Basis="50"
                             JustifyContent="SpaceAround">
                     
-                    <Button Text="Entrar"
+                    <Button Text="sair"
                             FlexLayout.AlignSelf="Center"
                             VerticalOptions="EndAndExpand"
                             HeightRequest="50"
-                            Command="{Binding Navegar}"/>
+                            Command="{Binding Navegar}"
+                            CommandParameter="DetailPage"
+                            IsEnabled="false">
+                        <Button.Triggers>
+                            <MultiTrigger TargetType="Button">
+                                <MultiTrigger.Conditions>
+                                    <BindingCondition Binding="{Binding Source={x:Reference nome},Path=Text.Length,Converter={StaticResource stringToBoolValidationConverter}}" Value="true"/>
+                                    <BindingCondition Binding="{Binding Source={x:Reference senha},Path=Text.Length,Converter={StaticResource stringToBoolValidationConverter}}" Value="true"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="true"/>
+                            </MultiTrigger>
+                        </Button.Triggers>
+                    </Button>    
                     
                     <Button Text="Novo Usuário"
                             HeightRequest="50"
                             FlexLayout.AlignSelf="Center"
                             Font="Bold"
-                            />
+                            >
+                        <Button.Triggers>
+                            
+                            <DataTrigger TargetType="Button"
+                                         Binding="{Binding Source={x:Reference nome},Path=Text.Length}"
+                                         Value="0">
+                                
+                                
+                                 <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
                     
                 </FlexLayout>
                 

@@ -24,5 +24,7 @@
     <Folder Include="Enums\" />
     <Folder Include="Controls\" />
     <Folder Include="Extentions\" />
+    <Folder Include="Views\Templates\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>

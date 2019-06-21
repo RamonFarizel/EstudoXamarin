@@ -3,12 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="EstudoXamarin.Views.DetailPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:templates="clr-namespace:EstudoXamarin.Views.Templates"
              ios:Page.UseSafeArea="true"
              Title="Pagina2">
    
-   <FlexLayout>
-        <Label Text="Testando pagina dois" Font="25"/>
-    </FlexLayout>
+   <FlexLayout Direction="Column">
+        <Label Text="Lista Pagina2" Font="25"/>
+        
+        <ListView ItemsSource="{Binding Lista}"
+                  x:Name="listview">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <templates:DetailListViewTemplate/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+   </FlexLayout>
     
     
 </ContentPage>

@@ -11,10 +11,23 @@ namespace EstudoXamarin.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        private DelegateCommand _navegar;
-        public DelegateCommand Navegar =>
-        _navegar ?? (_navegar = new DelegateCommand(async () => await ExecuteNavegar()));
+        private string _nome = string.Empty;
+        public string Nome
+        {
+            get => _nome;
+            set { SetProperty(ref _nome, value); }
+        }
 
+        private string _senha = string.Empty;
+        public string Senha
+        {
+            get => _senha;
+            set { SetProperty(ref _senha, value); }
+        }
+
+        private DelegateCommand<string> _navegar;
+        public DelegateCommand<string> Navegar =>
+        _navegar ?? (_navegar = new DelegateCommand<string>(async (parametro) => await ExecuteNavegar(parametro),CanExecuteMethod => false));
 
         protected MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
@@ -22,14 +35,24 @@ namespace EstudoXamarin.ViewModels
 
         }
 
-        private async Task ExecuteNavegar()
+        //private bool CanExecuteMethod(string arg)
+        //{
+        //    if (string.IsNullOrEmpty(Nome) && string.IsNullOrEmpty(Senha))
+        //        return false;
+
+        //    return true;
+        //}
+
+
+        private async Task ExecuteNavegar(string parametro)
         {
             var navParameters = new NavigationParameters()
             {
-                {"Teste", "Testando123"}
+                {"Nome", Nome},
+                {"Senha",Senha}
             };
 
-             await NavigationService.NavigateAsync("Go2/DetailPage", TiposDeTransicaoEnum.SlideFromBottom,navParameters);
+            await NavigationService.NavigateAsync($"{parametro}", TiposDeTransicaoEnum.Fade,navParameters);
         }
     }
 }
