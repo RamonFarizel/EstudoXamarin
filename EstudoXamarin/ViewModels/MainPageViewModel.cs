@@ -29,10 +29,11 @@ namespace EstudoXamarin.ViewModels
         public DelegateCommand<string> Navegar =>
         _navegar ?? (_navegar = new DelegateCommand<string>(async (parametro) => await ExecuteNavegar(parametro),CanExecuteMethod => false));
 
-        protected MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
+        public MainPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) 
             : base(navigationService, pageDialogService)
         {
-
+            Nome = "Ramon";
+            Senha = "123";
         }
 
         //private bool CanExecuteMethod(string arg)
@@ -52,7 +53,7 @@ namespace EstudoXamarin.ViewModels
                 {"Senha",Senha}
             };
 
-            await NavigationService.NavigateAsync($"{parametro}", TiposDeTransicaoEnum.Fade,navParameters);
+            await NavigationService.NavigateAsync($"{parametro}", TiposDeTransicaoEnum.SlideFromRight,navParameters);
         }
     }
 }

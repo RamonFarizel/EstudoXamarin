@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using EstudoXamarin.Droid.Renderers;
+using EstudoXamarin.Controls;
 
 namespace EstudoXamarin.Droid
 {
@@ -24,14 +26,14 @@ namespace EstudoXamarin.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            LoadApplication(new App());
+            LoadApplication(new App(new AndroidInitializer()));
         }
 
         public class AndroidInitializer : IPlatformInitializer
         {
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
-
+                //containerRegistry.RegisterForNavigation<TransitionNavigationPage, TransitionNavigationPageRenderer>();
             }
         }
 

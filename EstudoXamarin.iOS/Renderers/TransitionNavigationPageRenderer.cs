@@ -17,6 +17,8 @@ namespace EstudoXamarin.iOS.Renderers
     {
         private TiposDeTransicaoEnum _transitionType = TiposDeTransicaoEnum.Default;
 
+
+
         protected override void OnElementChanged(VisualElementChangedEventArgs e)
         {
             if (e.OldElement != null)

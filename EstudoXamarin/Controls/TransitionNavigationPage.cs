@@ -15,7 +15,7 @@ namespace EstudoXamarin.Controls
             set { SetValue(TransitionTypeProperty, value); }
         }
 
-        public TransitionNavigationPage() : base()
+        public TransitionNavigationPage() 
         {
         }
 
