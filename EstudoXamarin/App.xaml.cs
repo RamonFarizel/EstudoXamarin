@@ -38,6 +38,8 @@ namespace EstudoXamarin
 
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<DetailPage>();
+            containerRegistry.RegisterForNavigation<Pagina1>();
+            containerRegistry.RegisterForNavigation<Pagina2>();
         }
 
         private Task InitalizeNavigation() => NavigationService.NavigateAsync("Go2/MainPage");

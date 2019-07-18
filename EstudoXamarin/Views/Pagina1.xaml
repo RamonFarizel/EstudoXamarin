@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:EstudoXamarin.Controls"
+             x:Class="EstudoXamarin.Views.Pagina1" 
+             BackgroundImage="BackgroundImage.jpeg"
+             >
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="FillAndExpand" 
+                     >
+           
+            <Grid VerticalOptions="FillAndExpand"
+                  Margin="30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Label Text="Imagem" 
+                       TextColor="Blue"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       BackgroundColor="White"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+                
+                <Label Text="Login" 
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontSize="25"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       />
+                
+                 <Label Text="CPF" 
+                       TextColor="White"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       />
+                
+                <Frame Grid.Row="3"
+                       Grid.Column="0"
+                       HeightRequest="50"
+                       Padding="0"
+                       CornerRadius="10"
+                       HasShadow="false">
+                    
+                    <Entry Placeholder="Digite seu Senha"
+                           BackgroundColor="White"
+                           Margin="5,0"
+                           />
+                </Frame>
+                
+                 <Label Text="Ficha" 
+                       TextColor="White"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       />
+                
+                <Frame Grid.Row="5"
+                       Grid.Column="0"
+                       HeightRequest="50"
+                       Padding="0"
+                       CornerRadius="10"
+                       HasShadow="false">
+                    
+                    <Entry Placeholder="Digite sua Ficha"
+                           BackgroundColor="White"
+                           Margin="5,0"/>
+                </Frame>
+                
+               
+                <Button Text="Entre"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        VerticalOptions="End"
+                        Margin="0,50"
+                        BackgroundColor="#D8D047"
+                        FontAttributes="None"/>
+            </Grid>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

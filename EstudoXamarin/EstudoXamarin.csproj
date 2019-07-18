@@ -15,6 +15,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
     <PackageReference Include="Xamarin.HotReload" Version="1.4.10" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -26,5 +27,15 @@
     <Folder Include="Extentions\" />
     <Folder Include="Views\Templates\" />
     <Folder Include="Converters\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controls\SketchVoew.cs" />
+    <Compile Remove="ViewModels\Pagina2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.3.0-23\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

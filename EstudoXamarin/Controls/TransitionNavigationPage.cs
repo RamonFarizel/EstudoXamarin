@@ -17,12 +17,22 @@ namespace EstudoXamarin.Controls
 
         public TransitionNavigationPage() 
         {
+            SetStyle();
         }
 
         public TransitionNavigationPage(Page root) : base(root)
         {
-           
+            SetStyle();
         }
-        
+
+        void SetStyle()
+        {
+            BarBackgroundColor = Color.FromHex("#1A1917");
+            BarTextColor = Color.White;
+
+
+        }
+
+
     }
 }

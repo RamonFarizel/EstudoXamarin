@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="EstudoXamarin.Views.Pagina2"
+             BackgroundColor="#EFEFEF"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+             <Grid BackgroundColor="#1A1917"
+                   Grid.Row="0"
+                   Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+            
+                <Frame Grid.Row="0"
+                   Grid.RowSpan="2"
+                   VerticalOptions="Center"
+                   HeightRequest="120"
+                   WidthRequest="120"
+                   CornerRadius="60"
+                   Padding="0"
+                   Grid.Column="0"
+                   Margin="10,0,-10,0">
+                    
+                    <Image Source="https://d1qsx5nyffkra9.cloudfront.net/sites/default/files/article-image/eminence-organics-acne-face-mapping.jpg"
+                           Aspect="AspectFill"/>
+                </Frame>
+                
+            
+                
+                <FlexLayout Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Direction="Column"
+                            Margin="15,20,0,0"
+                            >
+                    
+                    <Label Text="Ramon Farizel"
+                           FontSize="Large"
+                           TextColor="White"
+                           FontAttributes="None"/>
+                    
+                    <Label Text="Matricula:"
+                           TextColor="White"
+                           FontAttributes="None">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Matricula: " 
+                                      FontAttributes="None"/>
+                                <Span Text="123456"
+                                      FontAttributes="Bold"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    
+                           <Label Text="Ortodontia"
+                           TextColor="White"
+                                  FontAttributes="None"/>
+                    
+                </FlexLayout>
+            
+                <Button BackgroundColor="#D8D047"
+                        Text="+"
+                        FontSize="Large"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        Margin="10"
+                        CornerRadius="30"
+                        Command="{Binding Navegar}"/>
+                
+                <BoxView BackgroundColor="Black"
+                         HeightRequest="1"
+                         Grid.Row="2"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="3"/>
+                
+        </Grid>
+            
+            <ListView Grid.Row="1"
+                      Grid.Column="0"
+                      ItemsSource="{Binding ListaClientes}"
+                      BackgroundColor="#EFEFEF"
+                      HorizontalOptions="Center"
+                      Margin="30,-30"
+                      HasUnevenRows="true"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame Margin="0,0,0,10"
+                                       HeightRequest="50"
+                                       HasShadow="false"
+                                       Padding="5">
+                                   <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Image Source="{Binding UrlAvatar}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"
+                                               />
+                                        
+                                        <FlexLayout Grid.Row="0"
+                                                    Grid.Column="1"
+                                                    Direction="Column"
+                                                    Margin="10,0,0,0">
+                                            
+                                            <Label Text="{Binding Nome}"/>
+                                            <Label Text="{Binding Ficha}"  FontAttributes="None"/>
+                                            <Label Text="{Binding TipoFicha}"  FontAttributes="None"/>
+                                            
+                                        </FlexLayout>
+                                        
+                                    </Grid>
+                                    
+                                    
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                  <Frame Margin="0,0,0,10"
+                                       HeightRequest="60"
+                                       HasShadow="false"
+                                       Padding="0">
+                                   <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Button BackgroundColor="#D8D047"
+                                                Text="+"
+                                                FontSize="12"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                HeightRequest="60"
+                                                WidthRequest="60"
+                                                Margin="10"
+                                                CornerRadius="30"
+                                                Command="{Binding Navegar}"/>
+                            
+                                        <Label Text="Cadastrar Novo Usuário"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                               VerticalOptions="Center"/>
+                                        
+                                    </Grid>
+                                    
+                                    
+                                </Frame>
+                </ListView.Footer>
+            </ListView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

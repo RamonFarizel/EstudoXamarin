@@ -15,7 +15,7 @@ namespace EstudoXamarin.Droid.Renderers
 
         public TransitionNavigationPageRenderer(Android.Content.Context context) : base(context)
         {
-
+            
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
