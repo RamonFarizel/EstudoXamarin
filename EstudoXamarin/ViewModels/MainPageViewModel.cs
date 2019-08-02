@@ -42,16 +42,16 @@ namespace EstudoXamarin.ViewModels
             Nome = "Ramon";
             Senha = "123";
 
-            _deviceInfo = deviceInfo;
+            //_deviceInfo = deviceInfo;
             
         }
 
         private async Task ExecuteNavegar(string parametro)
         {
-            var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Phone });
+            //var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Phone });
 
-            var teste = _deviceInfo.GetPhoneNumber();
-            await PageDialogService.DisplayAlertAsync("FDP", $"Seu numero é: {teste}", "OK");
+            //var teste = _deviceInfo.GetPhoneNumber();
+            //await PageDialogService.DisplayAlertAsync("FDP", $"Seu numero é: {teste}", "OK");
             //var navParameters = new NavigationParameters()
             //{
             //    {"Nome", Nome},

@@ -13,8 +13,11 @@
         <converter:StringToBoolValidationConverter x:Key="stringToBoolValidationConverter"/>
     </ContentPage.Resources>
         
+    <StackLayout>
+        <Switch BackgroundColor="Fuchsia" OnColor="Red" />
+    </StackLayout>
     
-    <Grid  >
+   <!-- <Grid  >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -127,5 +130,5 @@
             </FlexLayout>
             
         </Frame>
-    </Grid>
+    </Grid>-->
 </ContentPage>

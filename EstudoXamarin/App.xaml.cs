@@ -40,9 +40,10 @@ namespace EstudoXamarin
             containerRegistry.RegisterForNavigation<DetailPage>();
             containerRegistry.RegisterForNavigation<Pagina1>();
             containerRegistry.RegisterForNavigation<Pagina2>();
+            containerRegistry.RegisterForNavigation<PaginaTeste>();
         }
 
-        private Task InitalizeNavigation() => NavigationService.NavigateAsync("Go2/MainPage");
+        private Task InitalizeNavigation() => NavigationService.NavigateAsync("Go2/PaginaTeste");
 
 
         protected override void OnStart()
